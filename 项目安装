@@ -1,0 +1,22 @@
+安装cnpm：
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+
+项目安装：
+cnpm install
+
+项目运行：
+(1) 改服务地址(package.json文件)
+        "scripts": {
+           "init": "webpack --progress --config webpack.dev.config.js",
+           "start": "webpack-dev-server -d  --progress --host 127.0.0.1 --port 8080  --config webpack.dev.config.js",
+           "dev": "webpack-dev-server --content-base ./ --open --inline --hot --compress --history-api-fallback --config webpack.dev.config.js",
+           "build": "webpack --progress --hide-modules --config webpack.prod.config.js",
+           "lint": "eslint --fix --ext .js,.vue src"
+         },
+(2) 改端口地址（config.js）
+           let config = {
+                    env: Env,
+                    ajaxUrl: 'http://api.v-buy.com'   //后台服务器请求端口
+                    // ajaxUrl: 'http://192.168.1.21:8080'
+              };
+(3) npm  start
